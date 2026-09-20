@@ -1,6 +1,6 @@
 # Six Degrees of Kevin Bacon
 
-This is a relatively simple app to show the power and speed of ArangoDB 
+This is a relatively simple app to show the power and speed of ArangoDB when accessing more than 200 million records. 
 
 # Requirements
 
