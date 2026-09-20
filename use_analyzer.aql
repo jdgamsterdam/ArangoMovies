@@ -1,0 +1,4 @@
+FOR d IN title_principals_view
+  SEARCH ANALYZER(d.category == "writer", "Movies::norm_lower_noacc")
+  LIMIT 5
+  RETURN d

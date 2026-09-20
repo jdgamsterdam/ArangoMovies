@@ -1,0 +1,4 @@
+/* If return set is null then the Item is not an Episode */
+FOR episode IN title_episodes
+  FILTER episode._key == @tconst
+  RETURN episode

@@ -1,0 +1,6 @@
+/* If return set is null then the Item is not an Episode */
+FOR episode IN title_episodes
+  FILTER episode._key == @tconst
+    FOR title in title_basics
+      FILTER title._key == episode.parentTconst
+      RETURN title

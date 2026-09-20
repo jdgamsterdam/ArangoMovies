@@ -1,0 +1,10 @@
+/*Adds Title and Name directly in edge to make Processing Easier - Can take about 20 Min to Run*/
+
+FOR e IN movie_edges_direct
+    FILTER e.primaryTitle == null OR e.primaryName == null
+    LET t = DOCUMENT(e._from)
+    LET n = DOCUMENT(e._to)
+    UPDATE e WITH {
+        primaryTitle: t.primaryTitle,
+        primaryName:  n.primaryName
+    } IN movie_edges_direct

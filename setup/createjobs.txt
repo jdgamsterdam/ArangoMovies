@@ -1,0 +1,13 @@
+Make sure all fields in title_principals (other than order) have indexes
+
+add to file title_principals
+		
+Add
+
+	title_crew
+		"title_crew" ->ordering
+		_key -> tconst
+		breakapart directors > nconst
+			category = director
+		breakapart  > writers
+			category = writer

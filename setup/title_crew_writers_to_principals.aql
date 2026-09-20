@@ -1,0 +1,40 @@
+/* There maybe a few Jobs that are only in Title Crew (which only lists directors and writers) that need to be added to title_pricipals for completenesss */
+
+FOR job IN title_crew
+  /*LIMIT 100*/
+  LET writers = SPLIT(job.writers, ",")
+
+  FILTER LENGTH(writers) > 0
+
+  FOR rawWriter IN writers
+    LET writer = TRIM(rawWriter)
+
+    // Skip IMDb null sentinel
+    FILTER writer != "\\N"
+
+    LET hasMatch = FIRST(
+      FOR p IN title_principals_view
+        SEARCH p.tconst == job._key
+           AND p.nconst == writer
+           AND p.category == "writer"
+        LIMIT 1
+        RETURN true
+    )
+
+    FILTER hasMatch != true
+
+/* 
+    RETURN {
+      ordering: "title_crew",
+      tconst: job._key,
+      category: "writer",
+      nconst: writer
+    }
+
+*/
+    INSERT {
+      ordering: "title_crew",
+      tconst: job._key,
+      category: "writer",
+      nconst: writer
+    } INTO crew_temp

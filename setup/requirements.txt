@@ -1,0 +1,9 @@
+beautifulsoup4
+dash
+dash_bootstrap_components
+dash_extensions
+dash_daq
+dash_cytoscape
+pandas
+python-arango
+dotenv

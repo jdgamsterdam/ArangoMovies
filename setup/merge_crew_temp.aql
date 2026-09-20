@@ -1,0 +1,7 @@
+FOR doc IN crew_temp
+  INSERT {"tconst": doc.tconst,
+    "ordering": 999,
+    "nconst": doc.nconst,
+    "category": doc.category,
+    "job": doc.category,
+    "characters": ""} INTO title_principals

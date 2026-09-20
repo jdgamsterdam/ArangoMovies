@@ -1,0 +1,3 @@
+FOR p IN 1..6 ANY K_PATHS CONCAT('name_basics/',@nconst1) TO CONCAT('name_basics/',@nconst2) GRAPH 'Movie_Graph_Direct'
+    LIMIT 6
+    RETURN p

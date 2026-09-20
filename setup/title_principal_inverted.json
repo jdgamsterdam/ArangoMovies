@@ -1,0 +1,85 @@
+{
+  "analyzer": "identity",
+  "cleanupIntervalStep": 2,
+  "commitIntervalMsec": 1000,
+  "consolidationIntervalMsec": 5000,
+  "consolidationPolicy": {
+    "type": "tier",
+    "segmentsBytesMax": 8589934592,
+    "maxSkewThreshold": 0.4,
+    "minDeletionRatio": 0.5
+  },
+  "features": [],
+  "fields": [
+    {
+      "features": [
+        "norm"
+      ],
+      "analyzer": "norm_lower_noacc",
+      "name": "category"
+    },
+    {
+      "features": [
+        "norm"
+      ],
+      "analyzer": "norm_lower_noacc",
+      "name": "job"
+    },
+    {
+      "features": [
+        "frequency",
+        "position",
+        "norm"
+      ],
+      "analyzer": "text_en",
+      "name": "characters"
+    },
+    {
+      "features": [
+        "frequency",
+        "norm"
+      ],
+      "name": "tconst"
+    },
+    {
+      "features": [
+        "frequency",
+        "norm"
+      ],
+      "name": "nconst"
+    },
+    {
+      "features": [
+        "frequency",
+        "norm"
+      ],
+      "name": "ordering"
+    }
+  ],
+  "figures": {
+    "numDocs": 102461182,
+    "numPrimaryDocs": 102461182,
+    "numLiveDocs": 102461182,
+    "numSegments": 6,
+    "numFiles": 37,
+    "indexSize": 3544303980
+  },
+  "id": "title_principals/388101255",
+  "includeAllFields": false,
+  "name": "title_principals_inverted",
+  "optimizeTopK": [],
+  "primarySort": {
+    "fields": [],
+    "compression": "lz4"
+  },
+  "searchField": false,
+  "sparse": true,
+  "storedValues": [],
+  "trackListPositions": false,
+  "type": "inverted",
+  "unique": false,
+  "version": 1,
+  "writebufferActive": 0,
+  "writebufferIdle": 64,
+  "writebufferSizeMax": 33554432
+}

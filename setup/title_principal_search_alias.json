@@ -1,0 +1,12 @@
+{
+  "type": "search-alias",
+  "name": "title_principals_search_alias",
+  "indexes": [
+    {
+      "collection": "title_principals",
+      "index": "title_principals_inverted"
+    }
+  ],
+  "id": "388102562",
+  "globallyUniqueId": "hB7EBCB8C4A8F/388102562"
+}

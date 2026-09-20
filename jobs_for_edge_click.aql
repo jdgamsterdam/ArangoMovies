@@ -1,0 +1,3 @@
+FOR d IN title_principals_search_alias
+  SEARCH d.nconst == @nconst and d.tconst == @tconst
+  RETURN d
