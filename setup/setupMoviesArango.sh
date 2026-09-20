@@ -6,22 +6,21 @@ set +a
 # Make sure Arango Script tools and any requirements are installed
 ##sudo apt-get -y update
 ##sudo apt-get -y install wget gzip
-##sudo ./msi_setupclienttools.sh
-
+##sudo ./setupclienttools.sh
 
 #Download newest IMDB files and extract from Gzip
-##sudo ./msi_get_all_imdb_from_web.sh
+sudo ./get_all_imdb_from_web.sh
 
 # Create Movies Database and Database Admin-Done through Javascript
 
-##arangosh --server.endpoint tcp://$ARANGO_SERVER --server.username root --server.password $ARANGO_ROOTPASSWORD --javascript.execute createmoviedatabases.js
+arangosh --server.endpoint tcp://$ARANGO_SERVER --server.username root --server.password $ARANGO_ROOTPASSWORD --javascript.execute createmoviedatabases.js
 
 
 #Use ArangoImport to import 
-#./msi_import_imdb.sh
+./import_imdb.sh
 
 #Create additional collections for Database
-#python create_Movie_Collections.py
+python create_Movie_Collections.py
 
 
 # Final Indexes and views done with ArangoSh. NOTE The Following can take about 30 minutes. 
